@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+
+/* Couleur de marque (sarcelle) et accent énergie (ambre). */
+@theme {
+  --color-brand-50: var(--color-teal-50);
+  --color-brand-100: var(--color-teal-100);
+  --color-brand-200: var(--color-teal-200);
+  --color-brand-500: var(--color-teal-500);
+  --color-brand-600: var(--color-teal-600);
+  --color-brand-700: var(--color-teal-700);
+  --color-brand-800: var(--color-teal-800);
+  --color-brand-900: var(--color-teal-900);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+  /* Chiffres alignés pour les montants et les index. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+  /* Un montant ou un index ne se coupe jamais : le tableau défile dans sa carte. */
+  td.tabular,
+  th.tabular {
+    white-space: nowrap;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+  body {
+    @apply bg-white;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

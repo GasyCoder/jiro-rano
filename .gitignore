@@ -1,0 +1,16 @@
+node_modules/
+dist/
+deploy/
+coverage/
+.data/
+*.log
+.env
+.env.*
+!.env.example
+
+# Photos personnelles (factures, compteurs) déposées à la racine : jamais versionnées.
+/*.jpeg
+/*.jpg
+/*.png
+/*.heic
+/*.pdf
